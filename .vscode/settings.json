@@ -1,0 +1,11 @@
+{
+    "github.copilot.editor.enableCodeActions": false,
+    "github.copilot.chat.copilotDebugCommand.enabled": false,
+    "github.copilot.chat.reviewSelection.enabled": false,
+    "github.copilot.chat.edits.suggestRelatedFilesForTests": false,
+    "github.copilot.chat.edits.suggestRelatedFilesFromGitHistory": false,
+    "github.copilot.enable": {
+        "*": false,
+        "markdown": true
+    }
+}
