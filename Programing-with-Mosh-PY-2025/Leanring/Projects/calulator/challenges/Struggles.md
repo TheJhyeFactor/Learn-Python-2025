@@ -33,4 +33,3 @@ This made the check dynamic and worked perfectly.
 
 ## 📌 Note for Future Me
 - Use `in` when checking membership in lists, dicts, sets, etc.
-- It's okay to get stuck — it's how I actually learn.
