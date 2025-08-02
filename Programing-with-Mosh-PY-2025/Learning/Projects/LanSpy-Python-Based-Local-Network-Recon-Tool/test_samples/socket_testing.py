@@ -36,6 +36,9 @@ print(f"IP address using gethostbyaddr {gethostbyaddress(addr)}")
 
 #############################################################
 
+# learning how to use subprocess & excute a ping
+
+
 def ping (ip):
     print(f"this what the var ip is \n{ip} ")
     print(f"debugging {type(ip)}, type({ip})")
@@ -43,3 +46,10 @@ def ping (ip):
     print("Did it talk to you ?:", pinging.stdout)
     
 print(ping(addr))
+
+
+###################################################################
+
+network = subprocess.run(["ip","a"], capture_output=True, text=True)
+
+print(network)
