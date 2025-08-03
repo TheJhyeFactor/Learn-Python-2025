@@ -1,4 +1,5 @@
 import socket
+import re
 
 gethostname = socket.gethostname
 gethostbyname = socket.gethostbyname
@@ -52,4 +53,15 @@ print(ping(addr))
 
 network = subprocess.run(["ip","a"], capture_output=True, text=True)
 
-print(network)
+
+##########################################################################
+
+# This aera i need to take the output of the subprocces network to find my local IP range to give me a rang i can look into
+IpLookUp = r"(192\.168\.[0-9]+\.[0-9]+)"
+
+
+res = re.findall(IpLookUp, network.stdout)
+print(res)
+
+
+print(ping(res))
