@@ -75,19 +75,23 @@ def live_Ping (ip, c):
 
 
 def Ip_List (ips):
+    print(ips)
+    
     #print("These are the IP'S split from a list",ip)
     print(len(ips))
+    typeof_ips = type(ips)
+    
     for ip in ips:
         live_Ping(ip,"3")
         print(ip,"this is what we feb the ping function")
     if len(ips) <=0: 
         print("you dont have any ip's to talk to")
-    elif ips == type(list) == True:
+    elif typeof_ips != list:
         print("Sorry bud you are cooked !")
     
 
 
-print(Ip_List(res))
+print(Ip_List("res"))
 
 #print(live_Ping("addr","3"))         
 
