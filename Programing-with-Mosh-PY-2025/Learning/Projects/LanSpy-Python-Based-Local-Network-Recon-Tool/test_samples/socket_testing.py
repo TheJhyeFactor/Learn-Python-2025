@@ -66,32 +66,37 @@ print("LOOK HERE BROOOO SKI THIS IS WHAT WE ARE GIVING THE IP_LIST\n",type(res),
 #print("DEBUG res =", res, type(res))
 #print("This is just res but making it ip and calling the data to split",res, (type(res)))
 
-def live_Ping (ip, c):
+def live_ping (ip, c):
     ping = subprocess.run(["ping","-c",(c),(ip)],capture_output=True, text=True)
     if ping.returncode == 0:
             print(ip,"Is Alive",ping.returncode)
+            return
     else:
         print(ip, "Was not responding")
 
 
-def Ip_List (ips):
-    print(ips)
+def scan_ports(ip):
+    return
+
+
+def input_ip (ip_list):
+    print(ip_list)
     
     #print("These are the IP'S split from a list",ip)
-    print(len(ips))
-    typeof_ips = type(ips)
+    print(len(ip_list))
+    typeof_ips = type(ip_list)
     
-    for ip in ips:
-        live_Ping(ip,"3")
+    for ip in ip_list:
+        live_ping(ip,"3")
         print(ip,"this is what we feb the ping function")
-    if len(ips) <=0: 
+    if len(ip_list) <=0: 
         print("you dont have any ip's to talk to")
     elif typeof_ips != list:
         print("Sorry bud you are cooked !")
     
 
 
-print(Ip_List("res"))
+print(input_ip(res))
 
 #print(live_Ping("addr","3"))         
 
