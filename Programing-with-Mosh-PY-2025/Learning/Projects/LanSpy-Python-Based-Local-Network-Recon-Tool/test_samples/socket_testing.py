@@ -41,8 +41,7 @@ print(f"IP address using gethostbyaddr {gethostbyaddress(addr)}")
 
 
 def ping (ip):
-    print(f"this what the var ip is \n{ip} ")
-    print(f"debugging {type(ip)}, type({ip})")
+    # print(f"this what the var ip is \n{ip} ") == Was there so I could vaildate IP input from addr
     pinging = subprocess.run(["ping", "-c", "3", (ip)], capture_output=True, text=True)
     print("Did it talk to you ?:", pinging.stdout)
     
@@ -61,7 +60,7 @@ IpLookUp = r"(192\.168\.[0-9]+\.[0-9]+)"
 
 
 res = re.findall(IpLookUp, network.stdout)
-print(res)
+print("DEBUG res =", res, type(res))
 
 
-print(ping(res))
+#print(foundIPS)
