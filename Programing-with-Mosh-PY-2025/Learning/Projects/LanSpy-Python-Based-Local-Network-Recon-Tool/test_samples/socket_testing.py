@@ -61,13 +61,9 @@ res = []
 
 IpLookUp = r"(192\.168\.[0-9]+\.[0-9]+)"
 res = re.findall(IpLookUp, network.stdout)
-print(res)
+print("LOOK HERE BROOOO SKI THIS IS WHAT WE ARE GIVING THE IP_LIST\n",type(res),res)
 
 #print("DEBUG res =", res, type(res))
-
-
-#print(res[0],"Trying to print res as a str",type(res[0]))
-
 #print("This is just res but making it ip and calling the data to split",res, (type(res)))
 
 def live_Ping (ip, c):
@@ -77,4 +73,26 @@ def live_Ping (ip, c):
     else:
         print(ip, "Was not responding")
 
-print(live_Ping("168.165.12.0","3"))         
+
+def Ip_List (ips):
+    #print("These are the IP'S split from a list",ip)
+    print(len(ips))
+    for ip in ips:
+        live_Ping(ip,"3")
+        print(ip,"this is what we feb the ping function")
+    if len(ips) <=0: 
+        print("you dont have any ip's to talk to")
+    elif ips == type(list) == True:
+        print("Sorry bud you are cooked !")
+    
+
+
+print(Ip_List(res))
+
+#print(live_Ping("addr","3"))         
+
+
+
+
+
+
