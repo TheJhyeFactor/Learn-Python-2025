@@ -1,21 +1,13 @@
-# Try this and see what happens:
 
-tool_name = "LanSpy"
-version = "1.0"
-# Create a banner that looks like:
-# ===== LanSpy v1.0 =====
-banner = f"===== {tool_name} v{version} ====="
+port = 80
+status = "OK"
 
+print(f"Scanning port {port}... [{status}]")
 
-# 2. Create a separator line of 50 dashes
-separator = "-"* 50
+# 2. Print a table header
+# Output: IP Address     | Status | Response Time
+print("IP Address     | Status | Response Time")
 
-# 3. Format an IP scan result
-ip = "192.168.1.100"
-status = "ONLINE"
-# Create output: "[+] 192.168.1.100 - ONLINE"
-
-output = f"[+] {ip} - {status}"
-
-
-print(banner,output)
+# 3. Create a loading animation (print dots on same line)
+# Output: Loading...
+print("Loading", end="...")
