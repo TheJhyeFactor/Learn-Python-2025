@@ -24,7 +24,7 @@ is_student = True
 print(f"Student status: {is_student}")
 ```
 
-### ✏️ Exercise 1.1: Variable Practice
+### ✏️ Exercise 1.1: Variable Practice #Compeleted [Yes]
 Create variables for:
 1. Your favorite security tool name (string)
 2. Number of ports to scan (integer)
@@ -33,14 +33,14 @@ Create variables for:
 
 ```python
 # Your code here:
-tool_name = 
-ports_to_scan = 
-success_rate = 
-scan_complete = 
+tool_name = "PC" 
+ports_to_scan = 90
+success_rate = 29.1
+scan_complete = True
 
 # Print them all with descriptive messages
 ```
-
+print(f"This is my favorite security tool: {tool_name}", "This is what port i want to scan{ports_to_scan}", "this is the successs_rate of scanning that port: {success_rate}", "did the scan complete? {scan_complete}")
 ---
 
 ## 📚 Concept 2: String Operations
@@ -67,23 +67,28 @@ message = f"Scanning {ip}:{port}"
 print(message)
 ```
 
-### ✏️ Exercise 2.1: String Manipulation
+### ✏️ Exercise 2.1: String Manipulation #Compeleted [Yes]
 ```python
 # 1. Create a banner for your security tool
 tool_name = "LanSpy"
 version = "1.0"
 # Create a banner that looks like:
 # ===== LanSpy v1.0 =====
+banner = f"===== {tool_name} v{version} ====="
+
 
 # 2. Create a separator line of 50 dashes
-separator = 
+separator = "-" * 50
 
 # 3. Format an IP scan result
 ip = "192.168.1.100"
 status = "ONLINE"
 # Create output: "[+] 192.168.1.100 - ONLINE"
-```
 
+output = f"[+] {ip} - {status}"
+
+```
+print(banner,output)
 ---
 
 ## 📚 Concept 3: Print Function Mastery
@@ -111,18 +116,23 @@ Report
 """)
 ```
 
-### ✏️ Exercise 3.1: Formatted Output
+### ✏️ Exercise 3.1: Formatted Output #Compeleted [Yes]
 ```python
 # 1. Print a progress indicator
 # Output: Scanning port 80... [OK]
 port = 80
 status = "OK"
 
+print(f"Scanning port {port}... [{status}]")
+
 # 2. Print a table header
 # Output: IP Address     | Status | Response Time
+print("IP Address     | Status | Response Time")
 
 # 3. Create a loading animation (print dots on same line)
 # Output: Loading...
+print("Loading", end="...")
+
 ```
 
 ---
@@ -149,11 +159,19 @@ print(type(port_string))  # <class 'str'>
 print(type(port_number))  # <class 'int'>
 ```
 
-### ✏️ Exercise 4.1: Type Conversion Practice
+### ✏️ Exercise 4.1: Type Conversion Practice #Compeleted [Yes] 
+
 ```python
 # 1. Convert string IP octets to integers
+
 octet1 = "192"
 octet2 = "168"
+
+ip_1 = int(octet1) 
+ip_2 = int(octet2)
+
+print(f"converted Ip str into int: {type(ip_1)},{ip_1}, {type(ip_2)}, {ip_2}")
+
 # Convert and verify they're valid (0-255)
 
 # 2. Build an IP address from integer parts

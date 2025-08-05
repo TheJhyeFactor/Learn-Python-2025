@@ -25,23 +25,9 @@ if ip_1 > 0-255:
 # 2. Build an IP address from integer parts
 ip_parts = [192, 168, 1, 1]
 
-length = len(ip_parts)
-
-#print(length)
-
-if ip_parts >0:
-    up = 0
-    for num in ip_parts:
-        up = up + 1
-        print(length[up])
-    
-    #print(up)
-    
-   
-        
+set = range(len(ip_parts))
 
 
-ip_addr = ip_parts[+ 1]
 
 # Convert to string format: "192.168.1.1"
 
