@@ -4,8 +4,9 @@
 import subprocess
 import socket
 
-socket_obj = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 live = int
+
+port_a = [21, 22, 23, 80, 433, 3306, 5432, 8080, 8443, 9200, 6379]
 
 ports = {
     "FTP": 21,
@@ -42,17 +43,24 @@ def website_validation(url):
         if ping.returncode == 0:
             live = 1
             print("Your website is about to be scanned")
+            for p in port_a:
+                port_scan(url, p)
         else:
             live = 0
             print("Your Website cant be contacted please try again")
-            return user_input
+            return user_input()
 
 
-"""def port_scan(url,ports):
-    
-    
-    socket_obj.connect(((url), (ports)))
-"""
+def port_scan(url, port):
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Create socket
+        s.settimeout(1)                                       # Set timeout (1 second)
+        s.connect((url, port))                                # Connect to (host, port)
+        print(f"Port {port} is OPEN")
+    except:
+        print(f"Port {port} is CLOSED or FILTERED")
+    finally:
+        s.close()  
 
 
 
