@@ -5,7 +5,7 @@ import subprocess
 import socket
 
 socket_obj = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
+live = int
 
 ports = {
     "FTP": 21,
@@ -38,12 +38,23 @@ def user_input():
 def website_validation(url):
         print(f"well here we are\n{url} ")
         ping = subprocess.run(["ping","-c","3",(url)],capture_output=True,text=True)
-        return print(ping.stdout)
+        print(ping.stdout,ping.returncode)
+        if ping.returncode == 0:
+            live = 1
+            print("Your website is about to be scanned")
+        else:
+            live = 0
+            print("Your Website cant be contacted please try again")
+            return user_input
 
 
-def port_scan(url,ports):
-    pass
+"""def port_scan(url,ports):
+    
+    
+    socket_obj.connect(((url), (ports)))
+"""
 
-ip_con = socket_obj.connect(("google.com", 80))
 
-print(ip_con)
+
+
+user_input()
