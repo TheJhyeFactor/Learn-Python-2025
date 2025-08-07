@@ -10,22 +10,33 @@ Handles errors (e.g. file not found)
 Prints the final tally of total keywords
 """
 
-import os
-import re
-
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 
-
-
-def file_path():
-    path = askopenfilename(title='Select Folder') # shows dialog box and return the path
-    print(path)  
+def file_path(key):
+    key
+    path = askopenfilename(title='Select file') # shows dialog box and return the path
+    print(path)
+    read_file(path,key)
 
 def keyword():
-    key = input(str("Please input the Keyword you would like to find"))
+    key = input(str("Please input the Keyword you would like to find: "))
+    file_path(key)
     
-def read_file():
-    read_txt = open(f"{path},"r"")
+def read_file(path,key):
+    key
+    read_txt = open(f"{path}"r"")
+    print(F"So this is the Read_Text,{read_txt}")
+    key_wrd_c = read_txt.read()
+    key_count = key_wrd_c.count(key)
     print(read_txt.read)
+    results(key,key_count)
     
+    
+def results(key,key_count):
+    print(f"Total number of times,{key}, Was found,{key_count}")
+    
+    
+    
+    
+keyword()
