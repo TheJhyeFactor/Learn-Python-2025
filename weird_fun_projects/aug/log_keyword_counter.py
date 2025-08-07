@@ -15,12 +15,17 @@ import re
 
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
-path = askopenfilename(title='Select Folder') # shows dialog box and return the path
-print(path)  
 
 
 
+def file_path():
+    path = askopenfilename(title='Select Folder') # shows dialog box and return the path
+    print(path)  
 
 def keyword():
     key = input(str("Please input the Keyword you would like to find"))
+    
+def read_file():
+    read_txt = open(f"{path},"r"")
+    print(read_txt.read)
     
