@@ -30,11 +30,9 @@ reply_code = {
     502: "Bad Gateway",
     503: "Service Unavailable",
     504: "Gateway Timeout",
-    404: "Not Found,This page does not exist"
+   # 404: "Not Found,This page does not exist"
 }
 
-
-r = [""]
 
 wrd_lst = [
     "admin","login","logout","signin","signup","account","user","users","profile",
@@ -62,14 +60,18 @@ def url_scan(url,wrd_lst):
     for wrd in wrd_lst:
         
         f_url = url + wrd # Url we use to request the head
-        r = requests.head(f"{f_url}")
+        r = requests.head(f"{f_url}") 
         
         url_status = r.status_code       
         
         if r.status_code in reply_code:
+            reply_code != reply_code[404]
             print(f"This is the Final URL {f_url}: this is out request head Status code {r.status_code}, This is the status is: {url_status}")
+        elif r.status_code == 404:
+            print(F"This page: {f_url}:Status{r.status_code} does not exist\n")
         else:
-            print(f"This Status code {r.status_code} Wasnt in the Dicatrnery of Reply codes {reply_code}")
+            print(f"This is the stat code\n{r.status_code}\n{type(r.status_code)}")
+            print(f"This Status code {r.status_code} Wasnt in the Dicatrnery of Reply codes")
             print("we are still not able to cross check the status code with the reply codes key")
 
 
@@ -78,11 +80,3 @@ def url_scan(url,wrd_lst):
                
         
 user_input()
-
-""""
-        time.sleep(5)
-        if r.status_code in reply_code.keys():
-            print(f"We are able to see the: {f_url}:\n{sat_code}")
-        else:
-            print(f"{f_url}:\nWe are unable to review the reply code")
-            """
