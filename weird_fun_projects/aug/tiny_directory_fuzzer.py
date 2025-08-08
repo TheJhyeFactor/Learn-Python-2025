@@ -7,7 +7,7 @@ Optional: try simple extensions like .php, .bak, .old.
 """
 import subprocess
 import requests
-import socket
+import time
 
 wrd_lst = [
     "admin","login","logout","signin","signup","account","user","users","profile",
@@ -30,8 +30,11 @@ def user_input():
         base_url()
 
 
-def url_scan(url, wrd_lst):
+def url_scan(url,wrd_lst):
     for wrd in wrd_lst:
+        f_url = url + wrd
+        print(f_url)
+        time.sleep(1.2)
         r = requests.get(f"{url}{wrd}")
         print(r.text)
 
