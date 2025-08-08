@@ -23,7 +23,8 @@ wrd_lst = [
 
 def user_input():
     base_url = input("Please type the url you are wanting to scan: ")
-    y_n = input(f"Can you please confrim you ment: {base_url}: \n Please enter Y(yes) or N(no): \n Enter:")
+    confrim = input(f"Can you please confrim you ment: {base_url}: \n Please enter Y(yes) or N(no): \n Enter:")
+    y_n = confrim.lower()
     if y_n == "y":
         url_scan(base_url,wrd_lst)
     elif y_n == "n":
@@ -33,9 +34,9 @@ def user_input():
 def url_scan(url,wrd_lst):
     for wrd in wrd_lst:
         f_url = url + wrd
-        print(f_url)
+        #print(f_url)
         time.sleep(1.2)
-        r = requests.get(f"{url}{wrd}")
+        r = requests.get(f"{f_url}{wrd}")
         print(r.text)
 
 
