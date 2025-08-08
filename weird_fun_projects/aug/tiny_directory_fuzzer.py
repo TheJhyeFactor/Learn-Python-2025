@@ -31,8 +31,9 @@ def user_input():
 
 
 def url_scan(url, wrd_lst):
-    r = requests.get(f"{url}{wrd_lst}")
-    print(r.text)
+    for wrd in wrd_lst:
+        r = requests.get(f"{url}{wrd}")
+        print(r.text)
 
 
         
