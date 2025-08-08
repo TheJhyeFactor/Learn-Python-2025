@@ -65,7 +65,6 @@ def url_scan(url,wrd_lst):
         url_status = r.status_code       
         
         if r.status_code in reply_code:
-            reply_code != reply_code[404]
             print(f"This is the Final URL {f_url}: this is out request head Status code {r.status_code}, This is the status is: {url_status}")
         elif r.status_code == 404:
             print(F"This page: {f_url}:Status{r.status_code} does not exist\n")
