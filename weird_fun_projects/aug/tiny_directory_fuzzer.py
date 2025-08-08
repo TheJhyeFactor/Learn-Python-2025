@@ -60,10 +60,11 @@ def url_scan(url,wrd_lst):
     for wrd in wrd_lst:
         
         f_url = url + wrd # Url we use to request the head
+        
+        time.sleep(2)
         r = requests.head(f"{f_url}") 
         
         url_status = r.status_code       
-        
         if r.status_code in reply_code:
             print(f"This is the Final URL {f_url}: this is out request head Status code {r.status_code}, This is the status is: {url_status}")
         elif r.status_code == 404:
