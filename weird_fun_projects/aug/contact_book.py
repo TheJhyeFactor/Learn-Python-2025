@@ -20,9 +20,14 @@ contacts = {
     }
 }
 
-max_id = max(contacts.keys())
-new_id = max_id + 1
-print(new_id)
+def get_next_id():
+    if contacts:
+        max_id = max(contacts.keys())
+        new_id = max_id + 1
+    else:
+        return 1 # incase contacts is empty
+
+
 
 
 def add_contact():
@@ -31,6 +36,7 @@ def add_contact():
     number = input(str(f"Now please enter {firstname} {lastname}'s Number:  "))
     confirm = input(f"Please confrim is the Contac details are correct: \nFirstName: {firstname} \nLastName {lastname} \nNumber: {number}\n Please enter Y for yes N for No\n: ").lower()
     if  confirm == "y":
+        get_next_id()
         print("Contact added !!")
         contacts[new_id] = { # i need to ensure we are adding a random id and or ++ as this needs to be able to incress based on 
             "name": firstname,
@@ -68,7 +74,7 @@ def update_contact():
                     print(f"Lastname number updated: {person}")
                 elif field == "m":
                     updated_mobile = input(str("Please enter new mobile number: "))
-                    contacts[contact_id]["lastname"] = updated_mobile
+                    contacts[contact_id]["number"] = updated_mobile
                     print(f"Mobile number updated: {person}")
                 else:
                     print("invaild option")
