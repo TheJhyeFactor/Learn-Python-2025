@@ -38,8 +38,12 @@ def add_contact():
     
 
 
-def update_contact(firstname,number):
-    pass
+def update_contact():
+    num_search = input(str("Please enter the Mobile number of the contact you are trying to update: "))
+    
+    for key, person in contacts.items():
+        if person["number"] == num_search:
+            print(person)
 
 
 def delete_user(firstname,number):
@@ -56,4 +60,4 @@ def main_menu():
 
 
 
-add_contact()
+update_contact()
