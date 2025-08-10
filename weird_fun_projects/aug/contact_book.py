@@ -18,8 +18,8 @@ def add_contact():
     firstname = input(str("Please input the name of person you want to add to your conatact list: "))
     lastname = input(str(f"Please enter the last name for your contact: "))
     number = input(str(f"Now please enter {firstname} {lastname}'s Number:  "))
-    add_con = input(f"Please confrim is the Contac details are correct: Name: {firstname} {lastname} \n Number: {number}\n Please enter Y for yes N for No\n: ").lower()
-    if  add_con == "y":
+    confirm = input(f"Please confrim is the Contac details are correct: Name: {firstname} {lastname} \n Number: {number}\n Please enter Y for yes N for No\n: ").lower()
+    if  confirm == "y":
         print("Contact added !!")
         contacts[2] = { # i need to ensure we are adding a random id and or ++ as this needs to be able to incress based on 
             "name": {firstname},
@@ -27,7 +27,7 @@ def add_contact():
             "number": {number}
         }
         print(contacts)
-    elif confrim == "n":
+    elif confirm == "n":
         print("Okay well now you get to start again happy.")
         add_contact()
     else:
