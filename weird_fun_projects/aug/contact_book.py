@@ -18,10 +18,10 @@ def add_contact():
     firstname = input(str("Please input the name of person you want to add to your conatact list: "))
     lastname = input(str(f"Please enter the last name for your contact: "))
     number = input(str(f"Now please enter {firstname} {lastname}'s Number:  "))
-    c = input(f"Please confrim is the Contac details are correct: Name: {firstname} {lastname} \n Number: {number}\n Please enter Y for yes N for No\n: ").lower()
-    if  confrim == "y":
+    add_con = input(f"Please confrim is the Contac details are correct: Name: {firstname} {lastname} \n Number: {number}\n Please enter Y for yes N for No\n: ").lower()
+    if  add_con == "y":
         print("Contact added !!")
-        contacts[2] = {
+        contacts[2] = { # i need to ensure we are adding a random id and or ++ as this needs to be able to incress based on 
             "name": {firstname},
             "lastname": {lastname},
             "number": {number}
@@ -52,7 +52,7 @@ def update_contact():
                 elif field == "l":
                     updated_lastname = input(str("Please enter new lastname: "))
                     contacts[contact_id]["lastname"] = updated_lastname
-                    print(f"Lastname updated: {person}")
+                    print(f"Lastname number updated: {person}")
                 elif field == "m":
                     updated_mobile = input(str("Please enter new mobile number: "))
                     contacts[contact_id]["lastname"] = updated_mobile
@@ -66,18 +66,31 @@ def update_contact():
                 print("Bruh just enter in the options I showed you haha.")
                 update_contact()
 
-def delete_user(firstname,number):
-    pass
+def delete_user():
+    num_search = input(str("Please enter the Mobile number of the contact you are trying to delete: "))
+    for contact_id, person in contacts.items():
+        if person["number"] == num_search:
+            contact_del = input(f"Confirm contact to update: {person}\n Do you want to update this contact ? Y(yes) : N(no)").lower()
 
 
 def show_contact(firstname,number):
-    pass
-
+    print(contacts)
+    
 
 def main_menu():
-    print("welcome to the confr")
+    menu_selec = input(str("welcome to the Contacts App\n Please Select a menu:\n 1:Add a Contact\n 2:Update Contact\n 3:Delete Contact\n 4:Show all contacts\n: "))
+    if menu_selec == "1":
+        add_contact()
+    elif menu_selec == "2":
+        update_contact()
+    elif menu_selec == "3":
+        delete_user()
+    elif menu_selec == "4":
+        show_contact()
+    else:
+        print(f"Input invaild please try again")
+        main_menu
 
 
 
-
-update_contact()
+main_menu()
