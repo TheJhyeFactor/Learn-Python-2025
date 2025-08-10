@@ -33,6 +33,7 @@ def add_contact():
     else:
         print("Bruh just enter in the options I showed you haha.")
         add_contact()
+    
         
     
 
@@ -89,7 +90,7 @@ def main_menu():
         show_contact()
     else:
         print(f"Input invaild please try again")
-        main_menu
+        main_menu()
 
 
 
