@@ -1,6 +1,14 @@
 import tkinter
-import cryptography
+from cryptography.fernet import Fernet
 import secrets
-random_bytes = secrets.token_bytes(16)  # secure random 16 bytes
+key = Fernet.generate_key()  # secure random 16 bytes
+toke = Fernet(key)
 
-print(random_bytes, type(random_bytes))
+token = toke.encrypt(b"this is a secret message")
+
+token
+
+print(token, key)
+
+
+print(toke.decrypt(token))
