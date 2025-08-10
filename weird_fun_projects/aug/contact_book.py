@@ -46,11 +46,17 @@ def update_contact():
             if num_upconfrim == "y":
                 field = input(f"What field do you want to update: f(Firstname): L(Lastname): M(Mobile Number)\n Please enter the letter according to the field you want to update:- ").lower()
                 if field == "f":
-                    print("first")
+                    updated_firsname = input(str("Please enter new Firstname: "))
+                    contacts[contact_id]["name"] = updated_firsname
+                    print(f"Firstname updated: {person}")
                 elif field == "l":
-                        print("lastname")
+                    updated_lastname = input(str("Please enter new lastname: "))
+                    contacts[contact_id]["lastname"] = updated_lastname
+                    print(f"Lastname updated: {person}")
                 elif field == "m":
-                    print("mobile")
+                    updated_mobile = input(str("Please enter new mobile number: "))
+                    contacts[contact_id]["lastname"] = updated_mobile
+                    print(f"Mobile number updated: {person}")
                 else:
                     print("invaild option")
                     num_upconfrim
