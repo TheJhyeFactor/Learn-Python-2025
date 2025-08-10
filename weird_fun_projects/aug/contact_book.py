@@ -7,7 +7,11 @@ Build a small command-line program that lets you store, search, and display cont
 """
 
 contacts = {
-    "Jhye": "omeley" "0412826486",
+    1: {
+        "name": "Jhye",
+        "lastname": "omeley",
+        "number": "0412826486"
+    }
 }
 
 def add_contact():
@@ -18,7 +22,12 @@ def add_contact():
     confrim = c.lower()
     if  confrim == "y":
         print("Contact added !!")
-        contacts.update(f"{firstname}: {lastname} {number}")
+        contacts[2] = {
+            "name": {firstname},
+            "lastname": {lastname},
+            "number": {number}
+        }
+        print(contacts)
     elif confrim == "n":
         print("Okay well now you get to start again happy.")
         add_contact()
