@@ -74,8 +74,9 @@ def delete_user():
             contact_del = input(f"Confirm contact to update: {person}\n Do you want to update this contact ? Y(yes) : N(no)").lower()
 
 
-def show_contact(firstname,number):
-    print(contacts)
+def show_contact():
+    for contact_id, person in contacts.items():
+        print(person)
     
 
 def main_menu():
