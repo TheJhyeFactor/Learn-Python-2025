@@ -41,7 +41,7 @@ def add_contact():
 def update_contact():
     num_search = input(str("Please enter the Mobile number of the contact you are trying to update: "))
     
-    for key, person in contacts.items():
+    for contact_id, person in contacts.items():
         if person["number"] == num_search:
             print(person)
 
