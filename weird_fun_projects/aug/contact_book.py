@@ -11,17 +11,28 @@ contacts = {
         "name": "Jhye",
         "lastname": "omeley",
         "number": "0412826486"
+    },
+    
+    2: {
+        "name": "Jhye",
+        "lastname": "omeley",
+        "number": "0412826486"
     }
 }
+
+max_id = max(contacts.keys())
+new_id = max_id + 1
+print(new_id)
+
 
 def add_contact():
     firstname = input(str("Please input the name of person you want to add to your conatact list: "))
     lastname = input(str(f"Please enter the last name for your contact: "))
     number = input(str(f"Now please enter {firstname} {lastname}'s Number:  "))
-    confirm = input(f"Please confrim is the Contac details are correct: Name: {firstname} {lastname} \n Number: {number}\n Please enter Y for yes N for No\n: ").lower()
+    confirm = input(f"Please confrim is the Contac details are correct: \nFirstName: {firstname} \nLastName {lastname} \nNumber: {number}\n Please enter Y for yes N for No\n: ").lower()
     if  confirm == "y":
         print("Contact added !!")
-        contacts[2] = { # i need to ensure we are adding a random id and or ++ as this needs to be able to incress based on 
+        contacts[new_id] = { # i need to ensure we are adding a random id and or ++ as this needs to be able to incress based on 
             "name": {firstname},
             "lastname": {lastname},
             "number": {number}
@@ -33,6 +44,7 @@ def add_contact():
     else:
         print("Bruh just enter in the options I showed you haha.")
         add_contact()
+    return main_menu()
     
         
     
