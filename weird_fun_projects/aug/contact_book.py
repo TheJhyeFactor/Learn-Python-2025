@@ -33,7 +33,7 @@ def add_contact():
     lastname = input(str(f"Please enter the last name for your contact: "))
     number = input(str(f"Now please enter {firstname} {lastname}'s Number:  "))
     confirm = input(f"Please confrim is the Contac details are correct: \nFirstName: {firstname} \nLastName {lastname} \nNumber: {number}\n Please enter Y for yes N for No\n: ").lower()
-    next_id = get_next_id()
+    new_id = get_next_id()
     if  confirm == "y":
         print("Contact added !!")
         contacts[new_id] = { # i need to ensure we are adding a random id and or ++ as this needs to be able to incress based on 
