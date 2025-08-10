@@ -7,20 +7,24 @@ Build a small command-line program that lets you store, search, and display cont
 """
 
 contacts = {
-    "Jhye": "0438965894",
+    "Jhye": "omeley" "0412826486",
 }
 
 def add_contact():
     firstname = input(str("Please input the name of person you want to add to your conatact list: "))
-    number = input(str(f"Now please enter {firstname}'s Number:  "))
-    c = input(f"Please confrim is the Contac details are correct: Name: {firstname}\n Number: {number}\n Please enter Y for yes N for No\n: ")
+    lastname = input(str(f"Please enter the last name for your contact: "))
+    number = input(str(f"Now please enter {firstname} {lastname}'s Number:  "))
+    c = input(f"Please confrim is the Contac details are correct: Name: {firstname} {lastname} \n Number: {number}\n Please enter Y for yes N for No\n: ")
     confrim = c.lower()
     if  confrim == "y":
         print("Contact added !!")
+        contacts.update(f"{firstname}: {lastname} {number}")
     elif confrim == "n":
+        print("Okay well now you get to start again happy.")
         add_contact()
     else:
-        print("Bruh just enter in the options I showed you haha")
+        print("Bruh just enter in the options I showed you haha.")
+        add_contact()
         
     
 
@@ -35,6 +39,11 @@ def delete_user(firstname,number):
 
 def show_contact(firstname,number):
     pass
+
+
+def main_menu():
+    print("welcome to the confr")
+
 
 
 
