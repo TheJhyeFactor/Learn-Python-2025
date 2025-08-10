@@ -12,7 +12,6 @@ contacts = {
         "lastname": "omeley",
         "number": "0412826486"
     },
-    
     2: {
         "name": "Jhye",
         "lastname": "omeley",
@@ -22,8 +21,7 @@ contacts = {
 
 def get_next_id():
     if contacts:
-        max_id = max(contacts.keys())
-        new_id = max_id + 1
+        return max(contacts.keys()) + 1
     else:
         return 1 # incase contacts is empty
 
@@ -35,8 +33,8 @@ def add_contact():
     lastname = input(str(f"Please enter the last name for your contact: "))
     number = input(str(f"Now please enter {firstname} {lastname}'s Number:  "))
     confirm = input(f"Please confrim is the Contac details are correct: \nFirstName: {firstname} \nLastName {lastname} \nNumber: {number}\n Please enter Y for yes N for No\n: ").lower()
+    next_id = get_next_id()
     if  confirm == "y":
-        get_next_id()
         print("Contact added !!")
         contacts[new_id] = { # i need to ensure we are adding a random id and or ++ as this needs to be able to incress based on 
             "name": firstname,
@@ -84,17 +82,20 @@ def update_contact():
             else:
                 print("Bruh just enter in the options I showed you haha.")
                 update_contact()
+            return main_menu
 
 def delete_user():
     num_search = input(str("Please enter the Mobile number of the contact you are trying to delete: "))
     for contact_id, person in contacts.items():
         if person["number"] == num_search:
             contact_del = input(f"Confirm contact to update: {person}\n Do you want to update this contact ? Y(yes) : N(no)").lower()
+            return main_menu()
 
 
 def show_contact():
     for contact_id, person in contacts.items():
         print(person)
+        return main_menu()
     
 
 def main_menu():
