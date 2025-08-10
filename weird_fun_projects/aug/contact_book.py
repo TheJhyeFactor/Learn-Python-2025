@@ -8,13 +8,13 @@ Build a small command-line program that lets you store, search, and display cont
 
 contacts = {
     1: {
-        "name": "Jhye",
-        "lastname": "omeley",
+        "name": "jak",
+        "lastname": "man",
         "number": "0412826486"
     },
     2: {
-        "name": "Jhye",
-        "lastname": "omeley",
+        "name": "random man",
+        "lastname": "weridper",
         "number": "0412826486"
     }
 }
