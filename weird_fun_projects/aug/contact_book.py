@@ -33,9 +33,9 @@ def add_contact():
     if  confirm == "y":
         print("Contact added !!")
         contacts[new_id] = { # i need to ensure we are adding a random id and or ++ as this needs to be able to incress based on 
-            "name": {firstname},
-            "lastname": {lastname},
-            "number": {number}
+            "name": firstname,
+            "lastname": lastname,
+            "number": number
         }
         print(contacts)
     elif confirm == "n":
