@@ -2,23 +2,27 @@
 Goal:
 Build a Python script that listens for keyboard presses and logs each key to a text file in real time.
 """
-
+import os
 from pynput import keyboard
+
+file_path = "l.txt"
 
 def on_press(key, injected):
     try:
-        print('alphanumeric key {} pressed; it was {}'.format(
-            key.char, 'faked' if injected else 'not faked'))
+        print('alphanumeric key {} pressed; it was {}\n'.format(
+                key.char, 'faked' if injected else 'not faked'))
     except AttributeError:
-        print('special key {} pressed'.format(
-            key))
+            ('special key {} pressed'.format(
+                key))
 
 def on_release(key, injected):
-    print('{} released; it was {}'.format(
-        key, 'faked' if injected else 'not faked'))
-    if key == keyboard.Key.esc:
-        # Stop listener
-        return False
+    with open(file_path, 'a') as f:
+        key_re = ('{} released; it was {}\n'.format(
+            key, 'faked' if injected else 'not faked\n'))
+        f.write(key_re)
+        if key == keyboard.Key.esc:
+            # Stop listener
+            return False
 
 # Collect events until released
 with keyboard.Listener(
