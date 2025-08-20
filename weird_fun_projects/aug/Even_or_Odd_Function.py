@@ -8,4 +8,6 @@ def check_number(num):
         print(f"Your number is Odd; {num}")
         
         
-check_number(88)
+x = int(input(f"Please the number you would like to check: "))
+
+check_number(x)
