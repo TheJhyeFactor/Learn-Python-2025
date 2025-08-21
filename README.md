@@ -19,3 +19,9 @@ So its been going really well so far, I have been able to create a few projects 
 - I will also be logging my progress and what I have learned from these resources & or other platorms I am using to imporve my skills.
 
 So today insted of coding i went head and did some Hack the box challanges and it was alot of fun, I completed 3 easy rooms and I knew alot of the sutff already but was good to put it into practice. I also learned some new things about networking, I will be adding these tools to my learning resources section as well.
+
+
+
+
+
+Day off but not really away form home not able to reall work on stuff will do double tmr 
