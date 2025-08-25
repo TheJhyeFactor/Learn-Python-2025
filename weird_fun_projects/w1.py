@@ -23,7 +23,7 @@ def input_passlen():
 def passowrd_gen(pas_char, pas_len):
     n = int(pas_len)
     print(type(n))
-    passwrdf = random.choice(pas_char, k=n)
+    passwrdf = random.choices(pas_char, k=n)
     print(f"here is your password: {passwrdf}")
 
 
