@@ -15,14 +15,17 @@ def input_passlen():
     else:
         print(f"Hey bro not cool man, maybe you should retake maths becasue {pass_len} is smaller than 6 -_- \n Now i am going to give you another chance to get it right:\n")
         input_passlen()
+    print("Now get ready for your passowrd hehe you ready ????")
+    passowrd_gen(master_lst, pass_len)
         
 
     
-#def passowrd_gen():
+def passowrd_gen(pas_char, pas_len):
+    n = int(pas_len)
+    print(type(n))
+    passwrdf = random.choice(pas_char, k=n)
+    print(f"here is your password: {passwrdf}")
 
-#random.choice()
-#pass
 
 
-
-print(master_lst)
+input_passlen()
