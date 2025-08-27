@@ -8,3 +8,5 @@ messageB = bytes(message, "utf-16")
 ha.update(messageB)
 
 print(messageB)
+
+print(ha)
