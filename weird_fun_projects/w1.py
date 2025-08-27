@@ -19,13 +19,14 @@ def input_passlen():
     passowrd_gen(master_lst, pass_len)
         
 
-    
+   # need to update this to join the elements in the array when printed for the user also should maybe make 3 random choices and then join then selectino from each tuple making sure its = to the users len request then join the elemtns idk 
 def passowrd_gen(pas_char, pas_len):
     n = int(pas_len)
     print(type(n))
     passwrdf = random.choices(pas_char, k=n)
+    
     print(f"here is your password: {passwrdf}")
 
-
+# just going to be a qucik one to night we are going to join the elments that are returned from the output of the pass genrator so the user can have an easy time reading / copying their pasword / we might also make it save as a file
 
 input_passlen()
