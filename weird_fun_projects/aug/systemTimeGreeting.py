@@ -3,3 +3,15 @@
 
 
 print('this is going to say hello')
+
+
+def gh():
+    g = input("Please enter in a letter: ")
+    
+    if type(g) == str:
+        print(f"You entered: {g}")
+    else:
+        print("Why")
+
+gh()
+
